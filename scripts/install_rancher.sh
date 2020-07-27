@@ -77,7 +77,10 @@ helm install rancher rancher-latest/rancher \
   --namespace cattle-system \
   --version v2.4.2 \
   --set hostname=rancher.jasonmorsley.io \
+  --set ingress.tls.source=letsEncrypt \
+  --set letsEncrypt.email=letsencrypt@jasonmorsley.uk \
   --wait
+  
 
 kubectl -n cattle-system rollout status deploy/rancher
 
@@ -86,7 +89,7 @@ kubectl -n cattle-system rollout status deploy/rancher
 #  --wait
 #  --version v2.4.2 \
 #  --set ingress.tls.source=rancher \
-#  --set letsEncrypt.email=letsencrypt@morsley.uk \
+#  --set letsEncrypt.email=letsencrypt@jasonmorsley.uk \
 #  --set letsEncrypt.environment=staging \
 #  --set auditLog.level=3 \
 #  --set addLocal=true \

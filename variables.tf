@@ -63,7 +63,7 @@ variable "iam_role_name" {
 
 variable "ec2_name" {
   type = string
-  default = "node"
+  default = "rancher-node"
 }
 
 variable "ec2_instance_type" {
